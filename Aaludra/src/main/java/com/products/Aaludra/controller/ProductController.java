@@ -13,12 +13,14 @@ public class ProductController{
     ProductRepo repo;
 
     @GetMapping("/allProducts")
+    @CrossOrigin("http://localhost:8080/allProducts")
     public List<Product> getAllProduct()
     {
         return repo.findAll();
     }
 
     @PostMapping("/post")
+    @CrossOrigin
     public Product addProduct(@RequestBody Product product)
     {
         return repo.save(product);
